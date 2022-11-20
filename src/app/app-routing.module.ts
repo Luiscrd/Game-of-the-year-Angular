@@ -6,7 +6,7 @@ import { GotyComponent } from './pages/goty/goty.component';
 const routes: Routes = [
   { path: 'index', component: IndexComponent },
   { path: 'goty', component: GotyComponent },
-  { path: '**', redirectTo: 'index' },
+  { path: '**', pathMatch: 'full', redirectTo: 'index' },
 ];
 
 @NgModule({

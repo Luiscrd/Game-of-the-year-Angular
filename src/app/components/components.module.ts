@@ -4,6 +4,8 @@ import { RouterModule } from '@angular/router';
 
 import { NavbarComponent } from './navbar/navbar.component';
 import { GraficComponent } from './grafic/grafic.component';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -12,7 +14,9 @@ import { GraficComponent } from './grafic/grafic.component';
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    NgxChartsModule,
+    BrowserAnimationsModule
   ],
   exports: [
     NavbarComponent,
