@@ -27,4 +27,10 @@ export class GameService {
 
   }
 
+  voteGame(id: string) {
+
+    return this.http.post<{ok: boolean, msg: string}>(`${base_url}/goty/${id}`, {});
+
+  }
+
 }

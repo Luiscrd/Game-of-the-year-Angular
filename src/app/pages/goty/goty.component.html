@@ -8,7 +8,7 @@
         <h5 class="card-title">{{ game.name }}</h5>
         <p class="card-text">Click aquí para votar.</p>
         <div class="d-grid gap-1">
-          <button type="button" class="btn btn-block btn-outline-danger">Votar</button>
+          <button (click)="voteGame(game.id)" type="button" class="btn btn-block btn-outline-danger">Votar</button>
         </div>
       </div>
       <!-- <div class="card-footer">
