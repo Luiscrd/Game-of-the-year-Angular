@@ -1,11 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 
 @Component({
   selector: 'app-grafic',
   templateUrl: './grafic.component.html',
   styleUrls: ['./grafic.component.css']
 })
-export class GraficComponent {
+export class GraficComponent implements OnDestroy {
 
   results: any[] = [
     {
@@ -39,7 +39,31 @@ export class GraficComponent {
 
   colorScheme = 'nightLights';
 
+  interval: any;
+
   constructor() {
+
+    this.interval = setInterval( () => {
+
+      console.log('tick');
+
+      const newResults = [...this.results];
+
+      for (let i in newResults) {
+
+        newResults[i].value = Math.round(Math.random() * 500);
+
+      }
+
+      this.results = [...newResults];
+
+    }, 1500)
+
+  }
+
+  ngOnDestroy(): void {
+
+    clearInterval(this.interval);
 
   }
 
