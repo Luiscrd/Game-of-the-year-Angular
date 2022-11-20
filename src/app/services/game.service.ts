@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { of } from 'rxjs';
 import { environment } from '../../environments/environment';
-import { RespGames } from '../interfaces/interfaces';
+import { RespGames, Game } from '../interfaces/interfaces';
 
 const base_url = environment.base_url;
 
@@ -10,6 +11,8 @@ const base_url = environment.base_url;
 })
 export class GameService {
 
+  public games: Game[] = [];
+
   constructor(
 
     private http: HttpClient
@@ -17,6 +20,8 @@ export class GameService {
   ) { }
 
   getNominated() {
+
+    if(this.games.length !== 0) return of({ ok: true, games: this.games });
 
     return this.http.get<RespGames>(`${base_url}/goty`);
 
