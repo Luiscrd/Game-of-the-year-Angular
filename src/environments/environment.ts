@@ -4,7 +4,16 @@
 
 export const environment = {
   production: false,
-  base_url: 'http://localhost:5000/goty-5f05c/us-central1/api'
+  base_url: 'http://localhost:5000/goty-5f05c/us-central1/api',
+  firebase: {
+    apiKey: "AIzaSyBqyeI610LupFDiWu9sxCJtcSKpLSU0Gu4",
+    authDomain: "goty-5f05c.firebaseapp.com",
+    databaseURL: "https://goty-5f05c-default-rtdb.europe-west1.firebasedatabase.app",
+    projectId: "goty-5f05c",
+    storageBucket: "goty-5f05c.appspot.com",
+    messagingSenderId: "713535456694",
+    appId: "1:713535456694:web:a57120c3c133e4c982ad17"
+  }
 };
 
 /*

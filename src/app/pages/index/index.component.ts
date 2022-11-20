@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { map } from 'rxjs/operators'
+import { Game } from '../../interfaces/interfaces';
+
 
 @Component({
   selector: 'app-index',
@@ -7,9 +11,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IndexComponent implements OnInit {
 
-  constructor() { }
+
+
+  constructor(
+
+    private firestore: AngularFirestore
+
+  ) { }
 
   ngOnInit(): void {
+
+    this.firestore.collection<Game>('goty').valueChanges().pipe(
+      map(resp => resp.map(({ name, votos }) => ({ name, value: votos}))
+      )
+    )
+    .subscribe(resp => {
+      console.log(resp);
+    })
+
   }
 
 }

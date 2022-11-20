@@ -39,31 +39,31 @@ export class GraficComponent implements OnDestroy {
 
   colorScheme = 'nightLights';
 
-  interval: any;
+  // interval: any;
 
   constructor() {
 
-    this.interval = setInterval( () => {
+    // this.interval = setInterval( () => {
 
-      console.log('tick');
+    //   console.log('tick');
 
-      const newResults = [...this.results];
+    //   const newResults = [...this.results];
 
-      for (let i in newResults) {
+    //   for (let i in newResults) {
 
-        newResults[i].value = Math.round(Math.random() * 500);
+    //     newResults[i].value = Math.round(Math.random() * 500);
 
-      }
+    //   }
 
-      this.results = [...newResults];
+    //   this.results = [...newResults];
 
-    }, 1500)
+    // }, 1500)
 
   }
 
   ngOnDestroy(): void {
 
-    clearInterval(this.interval);
+    // clearInterval(this.interval);
 
   }
 
