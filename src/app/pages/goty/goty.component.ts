@@ -36,14 +36,14 @@ export class GotyComponent implements OnInit {
 
     this.gameService.voteGame(id).subscribe(rep => {
 
-      console.log(rep);
-
       Swal.fire({
         title: rep.ok ? 'Realizado' : 'No realizado',
         text: rep.msg,
-        icon: 'success',
+        icon: rep.ok ? 'success' : 'error',
         confirmButtonText: 'Ok',
-        confirmButtonColor: '#dc3545'
+        confirmButtonColor: '#dc3545',
+        background: '#212529',
+        color: '#fff'
       })
 
     });
