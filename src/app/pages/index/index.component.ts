@@ -11,7 +11,7 @@ import { Game } from '../../interfaces/interfaces';
 })
 export class IndexComponent implements OnInit {
 
-
+  public games: any[] = [];
 
   constructor(
 
@@ -25,8 +25,12 @@ export class IndexComponent implements OnInit {
       map(resp => resp.map(({ name, votos }) => ({ name, value: votos}))
       )
     )
-    .subscribe(resp => {
-      console.log(resp);
+    .subscribe(games => {
+
+      // console.log(games);
+
+      this.games = games;
+
     })
 
   }
